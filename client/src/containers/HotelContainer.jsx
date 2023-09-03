@@ -21,7 +21,7 @@ const HotelContainer = () => {
     <nav>Hotel</nav>
     <hr/>
     <GuestForm/>
-    <ListBookings bookings={bookings} setBookings={setBookings}/>
+    <ListBookings bookings={bookings}/>
     </>
   )
 }
