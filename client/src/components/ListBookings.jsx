@@ -1,5 +1,5 @@
 import React from 'react'
-import { updateBooking } from '../service/BookingsService'
+// import { updateBooking } from '../service/BookingsService'
 
 const ListBookings = ({bookings}) => {
   

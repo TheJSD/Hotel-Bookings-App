@@ -14,13 +14,19 @@ const HotelContainer = () => {
     })
   
   }, [])
+
+  const addBooking = (booking) => {
+    const bookingsCopy = bookings.map(booking => booking);
+    bookingsCopy.push(booking);
+    setBookings(bookingsCopy)
+  }
   
 
   return (
     <>
     <nav>Hotel</nav>
     <hr/>
-    <GuestForm/>
+    <GuestForm addBooking={addBooking}/>
     <ListBookings bookings={bookings}/>
     </>
   )

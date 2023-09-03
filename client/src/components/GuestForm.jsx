@@ -1,6 +1,7 @@
 import { React, useState } from 'react'
+import { postBooking } from '../service/BookingsService'
 
-const GuestForm = () => {
+const GuestForm = ({addBooking}) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,7 +12,6 @@ const GuestForm = () => {
     const newFormData = Object.assign({}, formData);
     newFormData[evt.target.name] = evt.target.value;
     setFormData(newFormData)
-    console.log(formData)
   }
 
   const changeCheckInForm = (evt) => {
@@ -24,8 +24,21 @@ const GuestForm = () => {
     setFormData(newFormData)
   }
 
+  const handleSubmit = (evt) => {
+    evt.preventdefault();
+    postBooking(formData)
+    .then((data)=>{
+      addBooking(data)
+    })
+    setFormData({
+      name: '',
+      email: '',
+      checkedin: false
+    })
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit} method="post">
       <label htmlFor='name'>Name: </label>
       <input 
         type='text'
@@ -50,7 +63,7 @@ const GuestForm = () => {
         name='checkedin' 
         onChange={changeCheckInForm} 
         checked={formData.checkedin}></input>
-      <button type='submit' onClick={(evt) => console.log(evt)}>Add Guest</button>
+      <button type='submit' onClick={(evt) => evt.preventdefault()}>Add Guest</button>
     </form>
   )
 }
