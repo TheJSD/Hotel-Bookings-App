@@ -1,4 +1,4 @@
-use Hotel;
+use hotel;
 db.dropDatabase();
 
 db.hotel_bookings.insertMany([
