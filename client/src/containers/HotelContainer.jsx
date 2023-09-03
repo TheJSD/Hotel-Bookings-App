@@ -44,7 +44,7 @@ const HotelContainer = () => {
 
   return (
     <>
-    <nav>Hotel</nav>
+    <nav><h1>HotelCodeClan_</h1></nav>
     <hr/>
     <GuestForm addBooking={addBooking}/>
     <ListBookings bookings={bookings} removeBooking={removeBooking} checkInToggle={checkInToggle}/>
