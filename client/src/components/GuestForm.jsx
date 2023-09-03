@@ -25,7 +25,7 @@ const GuestForm = ({addBooking}) => {
   }
 
   const handleSubmit = (evt) => {
-    evt.preventdefault();
+    evt.preventDefault();
     postBooking(formData)
     .then((data)=>{
       addBooking(data)
