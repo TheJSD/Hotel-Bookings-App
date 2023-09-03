@@ -19,10 +19,10 @@ export const deleteBooking = (_id) => {
   })
 }
 
-// export const updateBooking = (id, payload) => {
-//   return fetch(bookingsURL + id, {
-//     method: "PUT",
-//     body: JSON.stringify(payload),
-//     headers: { 'Content-Type': 'application/json'}
-//   })
-// }
+export const updateBooking = (id, payload) => {
+  return fetch(bookingsURL + id, {
+    method: "PUT",
+    body: JSON.stringify(payload),
+    headers: { 'Content-Type': 'application/json'}
+  })
+}

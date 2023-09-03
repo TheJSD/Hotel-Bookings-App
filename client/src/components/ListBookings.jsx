@@ -1,7 +1,7 @@
 import React from 'react'
 // import { updateBooking } from '../service/BookingsService'
 
-const ListBookings = ({bookings, removeBooking}) => {
+const ListBookings = ({bookings, removeBooking, checkInToggle}) => {
   
   // const checkInToggle = (evt, booking) => {
   //   const checkInStatus = evt.target.checked
@@ -17,7 +17,7 @@ const ListBookings = ({bookings, removeBooking}) => {
         <li>Name: {booking.name}</li>
         <li>Email: {booking.email}</li>
         <li>Checked In: 
-        <input type='checkbox' checked={booking.checkedin}/></li>
+        <input type='checkbox' checked={booking.checkedin} onClick={(evt) => checkInToggle(booking._id, evt.target.checked)}/></li>
         <button onClick={() => removeBooking(booking._id)}>DELETE</button>
       </ul>
     )
