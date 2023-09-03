@@ -19,7 +19,7 @@ db.hotel_bookings.insertMany([
   },
   {
     name: 'John Marston',
-    email: 'johnmasrton@gmail.com',
+    email: 'johnmarston@gmail.com',
     checkedin: false
   }
 ]);
