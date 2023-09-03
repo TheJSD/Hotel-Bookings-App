@@ -45,8 +45,10 @@ const GuestForm = ({addBooking}) => {
         id='name' 
         name='name'
         onChange={changeForm}
-        value={formData.name}/>
-        
+        value={formData.name}
+        required
+        />
+      <br/>
       <label htmlFor='email'>Email: </label>
       <input 
         type='text' 
@@ -54,8 +56,9 @@ const GuestForm = ({addBooking}) => {
         name='email'
         onChange={changeForm}
         value={formData.email}
-
-      />
+        required
+        />
+      <br/>
       <label htmlFor='checkedin'>Checked in? </label>
       <input 
         type='checkbox' 

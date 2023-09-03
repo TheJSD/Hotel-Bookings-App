@@ -19,6 +19,9 @@ const createRouter = function (collection) {
 
 	router.post('/', (req, res) => {
 		const newData = req.body;
+    if (newData.name == '' || !newData.name || newData.email == '' || !newData.email) {
+      return res.json('Post request Denied - name or email missing')
+    }
 		collection
 			.insertOne(newData)
 			.then((doc) => {
