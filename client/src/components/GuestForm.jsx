@@ -63,7 +63,7 @@ const GuestForm = ({addBooking}) => {
         name='checkedin' 
         onChange={changeCheckInForm} 
         checked={formData.checkedin}></input>
-      <button type='submit' onClick={(evt) => evt.preventdefault()}>Add Guest</button>
+      <button type='submit'>Add Guest</button>
     </form>
   )
 }
